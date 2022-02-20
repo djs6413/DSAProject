@@ -30,6 +30,7 @@ MAZEWARS_API char* GetTeam()
 int heightM;
 int widthM;
 const int** dataM;
+
 MAZEWARS_API void SetMaze(const int** data, int width, int height)
 {
 	heightM = height;
@@ -39,42 +40,53 @@ MAZEWARS_API void SetMaze(const int** data, int width, int height)
 
 MAZEWARS_API int** GetMaze(int& width, int& height)
 {
-	return nullptr;
+	width = widthM;
+	height = heightM;
+	return (int**)dataM;
 }
 
 
 int nextX;
 int nextY;
-//list<int> positionsX;
-//list<int> positionsY;
-int index = 0;
+int XList[10] = {8, 4, 2, 5, 9, 2, 1, 7, 3, 2};
+int YList[10] = {0, 10, 1, 2, 8, 7, 6, 4, 5, 5};
+
+int index = -1;
 MAZEWARS_API void GetNextPosition(int& xpos, int& ypos)
 {
-	for (size_t i = 0; i < 10; i++)
-	{
+	index++;
 
-	}
-
-	nextX = xpos++;
-	nextY = ypos++;
+	xpos = XList[index];
+	ypos = YList[index];
+	
 }
+
+int startX = -1;
+int startY = -1;
 
 MAZEWARS_API void SetStart(int xpos, int ypos)
 {
-
+	startX = xpos;
+	startY = ypos;
 }
 
 MAZEWARS_API void GetStart(int& xpos, int& ypos)
 {
-
+	xpos = startX;
+	ypos = startY;
 }
+
+int endX = -1;
+int endY = -1;
 
 MAZEWARS_API void SetEnd(int xpos, int ypos)
 {
-
+	endX = xpos;
+	endY = ypos;
 }
 
 MAZEWARS_API void GetEnd(int& xpos, int& ypos)
 {
-
+	xpos = endX;
+	ypos = endY;
 }
