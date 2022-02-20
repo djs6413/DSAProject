@@ -20,3 +20,61 @@ public:
 extern MAZEWARS_API int nMazeWars;
 
 MAZEWARS_API int fnMazeWars(void);
+
+const char* team = "Dan and Nash";
+MAZEWARS_API char* GetTeam()
+{
+	return (char*)team;
+}
+
+int heightM;
+int widthM;
+const int** dataM;
+MAZEWARS_API void SetMaze(const int** data, int width, int height)
+{
+	heightM = height;
+	widthM = width;
+	dataM = data;
+}
+
+MAZEWARS_API int** GetMaze(int& width, int& height)
+{
+	return nullptr;
+}
+
+
+int nextX;
+int nextY;
+//list<int> positionsX;
+//list<int> positionsY;
+int index = 0;
+MAZEWARS_API void GetNextPosition(int& xpos, int& ypos)
+{
+	for (size_t i = 0; i < 10; i++)
+	{
+
+	}
+
+	nextX = xpos++;
+	nextY = ypos++;
+}
+
+MAZEWARS_API void SetStart(int xpos, int ypos)
+{
+
+}
+
+MAZEWARS_API void GetStart(int& xpos, int& ypos)
+{
+
+}
+
+MAZEWARS_API void SetEnd(int xpos, int ypos)
+{
+
+}
+
+MAZEWARS_API void GetEnd(int& xpos, int& ypos)
+{
+
+}
